@@ -9,7 +9,7 @@ if(array_key_exists("name",$_POST) && array_key_exists("age",$_POST) && array_ke
 	$mobile_no=$_POST["mobile_no"];
 	$address=$_POST["address"];
 
-	$query_enter_details="insert into users (name,age,mobile_no,address) values ('".mysqli_escape_string($link,$name)."','".mysqli_escape_string($link,$age)."','".mysqli_escape_string($link,$mobile_no)."','".mysqli_escape_string($link,$address)."')";
+	$query_enter_details="insert into patient_details (name,age,mobile_no,address) values ('".mysqli_escape_string($link,$name)."',".$age.",'".mysqli_escape_string($link,$mobile_no)."','".mysqli_escape_string($link,$address)."')";
 
 	if($result=mysqli_query($link,$query_enter_details)){
 
