@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 27, 2017 at 11:32 AM
+-- Generation Time: Nov 07, 2017 at 12:41 PM
 -- Server version: 5.7.20-0ubuntu0.16.04.1
 -- PHP Version: 7.0.22-0ubuntu0.16.04.1
 
@@ -31,20 +31,8 @@ CREATE TABLE `patient_details` (
   `name` varchar(50) NOT NULL,
   `age` int(4) NOT NULL,
   `mobile_no` varchar(10) NOT NULL,
-  `address` varchar(50) NOT NULL,
-  `result` varchar(50) DEFAULT NULL
+  `address` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `patient_details`
---
-
-INSERT INTO `patient_details` (`patient_id`, `name`, `age`, `mobile_no`, `address`, `result`) VALUES
-(1, 'Abhishek Salwan', 20, '9855512345', 'lovley sweets', 'no'),
-(2, 'Aaditya', 20, '9855512345', 'beghar', 'yes'),
-(6, 'mj3ller', 30, '1324567891', 'amritsar', NULL),
-(7, 'kamlesh', 13, '9872912345', 'dhudhun', NULL),
-(8, 'ramu', 14, '9872912345', 'amritsar', NULL);
 
 -- --------------------------------------------------------
 
@@ -54,7 +42,9 @@ INSERT INTO `patient_details` (`patient_id`, `name`, `age`, `mobile_no`, `addres
 
 CREATE TABLE `scan_details` (
   `patient_id` int(4) NOT NULL,
-  `scan_id` int(4) NOT NULL
+  `scan_id` int(4) NOT NULL,
+  `left_img_result` varchar(10) DEFAULT NULL,
+  `right_img_result` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
