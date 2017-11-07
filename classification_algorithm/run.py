@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd 
 import os
+import cv2
 
 from skimage import io, transform
 
@@ -9,6 +10,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import precision_score
 from sklearn.metrics import recall_score
 from sklearn.metrics import f1_score
+
 
 class DRPredictor:
 
@@ -29,7 +31,8 @@ class DRPredictor:
 	#returns the image after processing 
 	def transform_img(self,img_path):
 
-		img=io.imread(img_path)
+		img = cv2.imread(img_path)
+		cv2 = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 		return transform.resize(img,(DRPredictor.IMG_WIDTH,DRPredictor.IMG_HEIGHT,DRPredictor.N_CHANNELS))
 
 
